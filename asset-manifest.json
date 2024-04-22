@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bravo-soft-web/static/css/main.f2632ce3.css",
-    "main.js": "/bravo-soft-web/static/js/main.8a99ab72.js",
+    "main.js": "/bravo-soft-web/static/js/main.0a007118.js",
     "index.html": "/bravo-soft-web/index.html",
     "main.f2632ce3.css.map": "/bravo-soft-web/static/css/main.f2632ce3.css.map",
-    "main.8a99ab72.js.map": "/bravo-soft-web/static/js/main.8a99ab72.js.map"
+    "main.0a007118.js.map": "/bravo-soft-web/static/js/main.0a007118.js.map"
   },
   "entrypoints": [
     "static/css/main.f2632ce3.css",
-    "static/js/main.8a99ab72.js"
+    "static/js/main.0a007118.js"
   ]
 }
