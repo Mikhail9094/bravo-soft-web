@@ -32,6 +32,7 @@ function AuthProvider({ children }: AuthProviderProps) {
             navigate("/login");
           }
         } else {
+          navigate("/login");
           alert(`Ошибка: ${error.message}`);
         }
       }
