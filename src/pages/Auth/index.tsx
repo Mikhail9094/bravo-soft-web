@@ -1,7 +1,7 @@
 import styles from "./authPage.module.scss";
 import { useContext, useState } from "react";
 import { ICredentials } from "./types";
-import { instance } from "../../api/requests";
+import { apiClient } from "../../api/requests";
 import { AuthContext } from "../../contexts/authContext";
 
 function AuthPage() {
@@ -12,7 +12,7 @@ function AuthPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await instance.post("/login", credentials);
+      const response = await apiClient.post("/login", credentials);
       login(response.data);
     } catch (error: any) {
       if (error.response) {

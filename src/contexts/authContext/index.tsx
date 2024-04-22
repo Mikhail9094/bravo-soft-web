@@ -1,7 +1,7 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { AuthContextProps, AuthProviderProps } from "./types";
 import { useNavigate } from "react-router";
-import { instance } from "../../api/requests";
+import { apiClient } from "../../api/requests";
 import { AUTH_USER_ID, TOKEN_LS_KEY } from "../../constants";
 
 export const AuthContext = createContext({} as AuthContextProps);
@@ -16,7 +16,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         const token = localStorage.getItem(TOKEN_LS_KEY);
         const userId = localStorage.getItem(AUTH_USER_ID);
         // отправляем запрос чтобы удостовериться верный ли token.
-        await instance(`/600/users/${userId}`);
+        await apiClient(`/600/users/${userId}`);
 
         if (token) {
           navigate("/");

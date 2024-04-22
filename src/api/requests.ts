@@ -1,14 +1,28 @@
 import axios from "axios";
 import { IApplication, IUser } from "../pages/NewOrder/types";
-import { BASE_URL } from "../constants";
+import { BASE_URL, TOKEN_LS_KEY } from "../constants";
 
-export const instance = axios.create({
-  baseURL: BASE_URL,
-  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-});
+const ApiClient = () => {
+  const instance = axios.create({
+    baseURL: BASE_URL,
+    headers: { Authorization: `Bearer ${localStorage.getItem(TOKEN_LS_KEY)}` },
+  });
+
+  instance.interceptors.request.use(async (request) => {
+    const token = localStorage.getItem("token");
+    if (token !== undefined) {
+      request.headers.set("Authorization", `Bearer ${token}`);
+    }
+    return request;
+  });
+
+  return instance;
+};
+
+export const apiClient = ApiClient();
 
 export const getUsers = async (): Promise<IUser[]> => {
-  const res = await instance(`/users`, {
+  const res = await apiClient(`/users`, {
     // Не срабатывает "_select: "-password" " - который должен исключить поле из ответа сервера.
     // В реальности конечно сервер настроен так что такие данные как пароль не отправляются сервером.
     // поэтому использовал функцию трансформации у axios, для получения данных без поля "password".
@@ -31,15 +45,15 @@ export const getUsers = async (): Promise<IUser[]> => {
 };
 
 export const findRepeatedApplications = async (query: string) => {
-  const res = await instance(`/applications?${query}`);
+  const res = await apiClient(`/applications?${query}`);
   return res.data;
 };
 
 export const getApplications = async () => {
-  const res = await instance(`/applications`);
+  const res = await apiClient(`/applications`);
   return res.data;
 };
 
 export const createApplication = async (item: IApplication) => {
-  await instance.post(`/applications`, item);
+  await apiClient.post(`/applications`, item);
 };
