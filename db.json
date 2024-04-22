@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "email": "sidorov@mail.ru",
+      "password": "$2a$10$a4B.1A6zp9xl0hBMZxlNFOm7gBMMy0xPgVjj2N/sV/6tUEF5s8mzS",
+      "name": "Сидоров С.С.",
+      "id": 1
+    },
+    {
+      "email": "ivanov@mail.ru",
+      "password": "$2a$10$1cbizQn8HGW08M7L.83Q1eOCDo1GL5nwOLXuT/ZmLFEKdoMv89.i2",
+      "name": "Иванов И.И.",
+      "id": 2
+    },
+    {
+      "email": "petrov@mail.ru",
+      "password": "$2a$10$Ub7QKrHpbw8k06MA.p5bmuYEV41M3cfaDhKJ02swq0OUGRx37N442",
+      "name": "Петров П.П.",
+      "id": 3
+    }
+  ],
+  "_post": {
+    "users": {
+      "exclude": ["password"]
+    }
+  },
+  "_constraints": [
+    {
+      "unique": ["customerId", "document"]
+    }
+  ],
+  "applications": [
+    {
+      "customerId": "1",
+      "document": "ГОСТ 120",
+      "id": 1
+    },
+    {
+      "customerId": "1",
+      "document": "ГОСТ 121",
+      "id": 2
+    },
+    {
+      "customerId": "1",
+      "document": "ГОСТ 122",
+      "id": 3
+    },
+    {
+      "customerId": "2",
+      "document": "ГОСТ 122",
+      "id": 4
+    },
+    {
+      "customerId": "2",
+      "document": "ГОСТ 121",
+      "id": 5
+    },
+    {
+      "customerId": "2",
+      "document": "ГОСТ 124",
+      "id": 6
+    },
+    {
+      "customerId": "3",
+      "document": "ГОСТ 121",
+      "id": 7
+    },
+    {
+      "customerId": "3",
+      "document": "ГОСТ 127",
+      "id": 8
+    },
+    {
+      "customerId": "3",
+      "document": "ГОСТ 122",
+      "id": 9
+    }
+  ]
+}

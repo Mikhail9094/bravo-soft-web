@@ -1,0 +1,36 @@
+.table {
+  margin: 10% auto;
+  border: 1px solid rgb(0, 0, 0);
+  margin-bottom: 5px;
+  border-collapse: collapse;
+
+  .tbody{
+    background: white;
+  }
+
+  & th {
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #414144;
+  }
+
+  & td {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #444441;
+    border-top: 1px solid #716561;
+  }
+
+  & tr:hover {
+    background-color: #d6eeee;
+  }
+
+  .count {
+    text-align: center;
+  }
+} 

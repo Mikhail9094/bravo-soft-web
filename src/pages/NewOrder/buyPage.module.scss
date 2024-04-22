@@ -1,0 +1,63 @@
+.auth {
+  margin: 10% auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  width: 500px;
+  text-align: center;
+  color: #555;
+
+  &__list {
+    border: 1px solid #ddd;
+  }
+
+  &__message {
+    font-size: 12px;
+    font-weight: 700;
+    color: red;
+  }
+
+  &__button {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #4caf50;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #4caf50;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
